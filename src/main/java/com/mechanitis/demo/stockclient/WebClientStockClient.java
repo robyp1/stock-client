@@ -27,7 +27,7 @@ public class WebClientStockClient {
                 .uri("http://localhost:8080/stocks/{symbol}", symbol)
                 .retrieve()
                 .bodyToFlux(StockPrice.class)
-                .retryBackoff(5, Duration.ofSeconds(1), Duration.ofSeconds(20))//retray if filed 5 times between intervals
+                .retryBackoff(5, Duration.ofSeconds(5), Duration.ofSeconds(20))//retray if filed 5 times between intervals
         .doOnError(IOException.class, e -> log.error(e.getMessage(), e)); //in case of IoException
 
     }
