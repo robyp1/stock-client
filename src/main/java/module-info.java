@@ -5,4 +5,6 @@ module stock.client {
     requires org.apache.logging.log4j;
     requires spring.boot;
     requires spring.boot.autoconfigure;
+
+    exports com.mechanitis.demo.stockclient;
 }
