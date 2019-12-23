@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 
 class WebClientStockClientIntegrationTest {
 
-    private static final String SYMBOL = "EUR";
+    private static final String SYMBOL = "Apple Inc.";
     private WebClient webClient = WebClient.builder().build();
 
     @Test
