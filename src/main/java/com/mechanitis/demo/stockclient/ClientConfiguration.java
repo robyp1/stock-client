@@ -14,7 +14,7 @@ public class ClientConfiguration {
     }
 
     @Bean
-    @ConditionalOnMissingBean
+    @ConditionalOnMissingBean //solo la prima volta webclient=null e lo inizializza, poi le altre volte non entra più..
     public WebClient webClient(){
         return WebClient.builder().build();
     }
