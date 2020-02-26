@@ -7,6 +7,10 @@ module stock.client {
     requires spring.boot.autoconfigure;
     requires spring.context;
 
-    exports com.mechanitis.demo.stockclient;
+    requires com.fasterxml.jackson.databind;//required because webflux doesnt export faster jackson..
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.classmate;
+
+    exports com.mechanitis.demo.stockclient to spring.beans, spring.context, stock.ui;
     opens com.mechanitis.demo.stockclient to spring.core;
 }
